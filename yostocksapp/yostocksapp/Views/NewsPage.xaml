@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yostocksapp.Views.NewsPage"
+             Title="News"
+             Icon="newsinactive">
+    <ContentPage.Content>
+        <!-- <ListView x:Name="listViewArticles"> -->
+        <ListView x:Name="ArticlesListView"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Frame BackgroundColor="LightGray" HasShadow="False" CornerRadius="0">
+                            <Frame BackgroundColor="White" HasShadow="True" CornerRadius="2" Padding="0">
+
+                                <StackLayout Padding="0" IsClippedToBounds="True">
+                                    <!--HeightRequest="280"      do Image-->
+                                    <Image  Source="{Binding UrlToImage}" HorizontalOptions="CenterAndExpand" Aspect="AspectFit"/>
+
+                                    <StackLayout  Padding="10">
+                                        <Label Text="{Binding Title}" HorizontalOptions="Start" FontAttributes="Bold" FontSize="Small"/>
+                                        <Label Text="{Binding Description}" VerticalOptions="Start" HorizontalOptions="Start" FontSize="Micro" LineBreakMode="CharacterWrap"/>
+                                        <Label Text="READ MORE" HorizontalOptions="Start" TextColor="SeaGreen"
+                                               FontFamily="Times New Roman" FontSize="Micro" FontAttributes="Bold">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding GotoUrl}" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>
+                        </Frame>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

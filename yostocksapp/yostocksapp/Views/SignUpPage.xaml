@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yostocksapp.Views.SignUpPage">
+   
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#48D5B4" Padding="60">
+
+            <Image Source="yostocks.png" Margin="0,40,0,0" HeightRequest="200" MinimumWidthRequest="200"/>
+
+            <Entry Placeholder="Email" PlaceholderColor="#707070" x:Name="EntEmail"/>
+            <Entry Placeholder="Password" PlaceholderColor="#707070" x:Name="EntPassword" IsPassword="True"/>
+            <Entry Placeholder="Confirm Password" PlaceholderColor="#707070" x:Name="EntConfirmPassword" IsPassword="True"/>
+            <Button Text="Sign Up" BackgroundColor="#C62729" TextColor="White" x:Name="BtnSignUp" Clicked="BtnSignUp_Clicked"/>
+
+        </StackLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>

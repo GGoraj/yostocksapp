@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yostocksapp.Views.SignInPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#48D5B4" Padding="60">
+
+            <Image Source="yostocks.png" Margin="0,40,0,0" HeightRequest="200" MinimumWidthRequest="200"/>
+            
+            <Entry x:Name="EntEmail" Placeholder="Email"/>
+            <Entry x:Name="EntPassword" IsPassword="true" Placeholder="Password"/>
+            <Button x:Name="SignInBtn" BackgroundColor="#C62729" TextColor="White" Text="Login" Clicked="SignInBtn_Clicked"/>
+
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Don't have account yet?" />
+                <StackLayout Spacing="0">
+                    <Label Text="Sign Up" FontAttributes="Bold"/>
+                    <BoxView BackgroundColor="Black" HeightRequest="1" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapSignUp" NumberOfTapsRequired="1" Tapped="TapSignUp_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="yostocksapp.Views.BrandsPage"
+             Title="Brands"
+             BackgroundColor="White"
+             Icon="brandsinactive">
+    <ContentPage.Content>
+
+        <ListView 
+            ItemsSource="{Binding Brands}"
+            HasUnevenRows="True"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width = "*" />
+                                <ColumnDefinition Width = "*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <StackLayout Padding="40">
+
+
+                                <!-- BackgroundColor="#25CBA9" -->
+                                <Button Grid.Column="0" 
+                                            WidthRequest="5"
+                                            HeightRequest="20"
+                                            BorderRadius="10" 
+                                            
+                                            Text="Buy" 
+                                            x:Name="{Binding BrandName}"  
+                                            Clicked="OnBuyClickedAsync"/>
+
+                                <Image Grid.Column="0" Source="{Binding FileName}" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Padding="30" >
+                                <Image  Source="chart.png"/>
+                            </StackLayout>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </ContentPage.Content>
+</ContentPage>
